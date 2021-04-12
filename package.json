@@ -1,0 +1,77 @@
+{
+  "name": "typescript-node-lib",
+  "version": "0.0.0",
+  "licence": "MIT",
+  "author": {
+    "name": "name",
+    "email": "email@domain.com"
+  },
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.mjs",
+  "types": "dist/cjs/index.d.ts",
+  "esnext": "dist/esm/index.mjs",
+  "description": "your typescript library description",
+  "keywords": [
+    "typescript"
+  ],
+  "scripts": {
+    "benchmarks": "ts-node benchmarks",
+    "changelog": "standard-changelog",
+    "clean": "rimraf dist",
+    "docs": "npm run clean && typedoc --options typedoc.markdown.json",
+    "lint": "eslint -c ./.eslintrc.json src/**/*.ts --fix",
+    "prepublishOnly": "rimraf dist && rollup -c ./rollup.config.js",
+    "size-limit": "npm run clean && tsc -p . && size-limit",
+    "test": "jest",
+    "upgrade-interactive": "npm-check --update"
+  },
+  "homepage": "https://github.com/yourname/yourrepo#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourname/yourrepo.git"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*.{ts,tsx,js,jsx}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "size-limit": [
+    {
+      "path": "dist/index.js"
+    }
+  ],
+  "devDependencies": {
+    "@size-limit/preset-small-lib": "^4.10.2",
+    "@size-limit/time": "^4.10.2",
+    "@types/benchmark": "^2.1.0",
+    "@types/jest": "^26.0.22",
+    "@types/node": "^14.14.37",
+    "@typescript-eslint/eslint-plugin": "^4.21.0",
+    "@typescript-eslint/parser": "^4.21.0",
+    "benchmark": "^2.1.4",
+    "codecov": "^3.8.1",
+    "eslint": "^7.23.0",
+    "husky": "^6.0.0",
+    "jest": "^26.6.3",
+    "lint-staged": "^10.5.4",
+    "npm-check": "^5.9.2",
+    "prettier": "^2.2.1",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.44.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-typescript2": "^0.30.0",
+    "size-limit": "^4.10.2",
+    "standard-changelog": "^2.0.27",
+    "ts-jest": "^26.5.4",
+    "ts-node": "^9.1.1",
+    "typedoc": "^0.20.35",
+    "typedoc-plugin-markdown": "^3.6.1",
+    "typescript": "^4.2.3"
+  }
+}
