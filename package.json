@@ -1,21 +1,21 @@
 {
-  "name": "typescript-node-lib",
+  "name": "use-primitives",
   "version": "0.0.0",
   "licence": "MIT",
-  "author": {
-    "name": "name",
-    "email": "email@domain.com"
-  },
+  "author": "Paolo Roth",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.mjs",
   "types": "dist/cjs/index.d.ts",
   "esnext": "dist/esm/index.mjs",
-  "description": "your typescript library description",
+  "description": "A set of primitives hooks for everyday react development.",
   "keywords": [
+    "react",
+    "hooks",
+    "react hook",
+    "primitives",
     "typescript"
   ],
   "scripts": {
-    "benchmarks": "ts-node benchmarks",
     "changelog": "standard-changelog",
     "clean": "rimraf dist",
     "docs": "npm run clean && typedoc --options typedoc.markdown.json",
@@ -49,9 +49,11 @@
   "devDependencies": {
     "@size-limit/preset-small-lib": "^4.10.2",
     "@size-limit/time": "^4.10.2",
+    "@testing-library/react-hooks": "^5.1.1",
     "@types/benchmark": "^2.1.0",
     "@types/jest": "^26.0.22",
     "@types/node": "^14.14.37",
+    "@types/react": "^17.0.3",
     "@typescript-eslint/eslint-plugin": "^4.21.0",
     "@typescript-eslint/parser": "^4.21.0",
     "benchmark": "^2.1.4",
@@ -62,6 +64,7 @@
     "lint-staged": "^10.5.4",
     "npm-check": "^5.9.2",
     "prettier": "^2.2.1",
+    "react-test-renderer": "^17.0.2",
     "rimraf": "^3.0.2",
     "rollup": "^2.44.0",
     "rollup-plugin-terser": "^7.0.2",
@@ -73,5 +76,11 @@
     "typedoc": "^0.20.35",
     "typedoc-plugin-markdown": "^3.6.1",
     "typescript": "^4.2.3"
+  },
+  "dependencies": {
+    "tiinvo": "^2.15.0"
+  },
+  "peerDependencies": {
+    "react": "^17.0.2"
   }
 }
