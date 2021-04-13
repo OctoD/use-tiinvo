@@ -1,56 +1,157 @@
-typescript library template
-===========================
+use-primitives
+==============
 
-Your library description
+A collection of React hooks for primitives handling and data validation.
 
 # 🎉 Features
 
-Add your library features here.
-
-📦 This template already has (out of the box):
-
-* preconfigured rollup build (for amd, umd, esnext and commonjs)
-* preconfigured jest (with ts-jest) for testing your library
-* preconfigured benchmarks with benchmark.js
-* azure dev-ops configuration
-* travis-ci configuration, just add your repo to travis and you have done
-* codecov setup
-* tsconfig.json configurated for node.js libraries
-* eslint/prettier you have eslint/prettier preconfigured, your code will be linted at commit time automatically
-* github issue templates, they are already there, just configure them
-* contributing guidelines and code of conduct are already setupped
-* size-limit script, for checking the weight of your library
-* automatic docs generation with [typedoc](https://github.com/TypeStrong/typedoc)
-* automatic changelog generation with standard-changelog
+* useBool: useful for on/off state management
+* useNum: handles a numeric value
+* useNullableNum: handles a nullable numeric value
+* useOptionalNum: handles a possibly undefined numeric value
+* useOption: handles an `Option<T>` value
+* usePredicate: checks if a value satisfies the given predicate
+* useResult: handles a `Result<T>` value
+* useSafe: handles a type safe `<T>` value
+* useStr: handles a string value
+* useNullabelStr: handles a nullable string value
+* useOptionalStr: handles a possibly undefined string value
+* useValidate: accepts a `usePredicate` hook and an error message. Useful for data validation (form's fields)
+* useValidateShape: similar to `useValidate`, but accepts a `Record` and validates it. Ideal for complex forms.
+* useValue: handles a value `<T>`
+* exports the complete version of [tiinvo](https://github.com/octod/tiinvo)
 
 # ⚙ Install
 
 ```bash
-# npm
-npm i mylib
-
 # yarn
-yarn add mylib
+yarn add use-primitives
+
+# npm
+npm i use-primitives
 ```
 
 # 📖 Docs
 
-You can read docs [here](./docs/README.md), just remember to run your `npm run docs` script.
+You can full detailed read docs [here](./docs/README.md).
 
-# 🔍 Usage
+# 🔍 Examples
 
-Put my library usage guide here
+## Toggling state
 
-Predefined scripts:
+A button which shows/hide a modal
 
-- benchmarks: runs all your benchmarks
-- changelog: creates a changelog (using standard-changelog)
-- docs: creates docs from your jsdocs
-- lint: lints your code
-- prepublishOnly: builds your sources for deployment (to npm)
-- size-limit: checks your bundle size limit
-- test: run tests 
-- upgrade-interactive: updgrades your dependencies interactively (like with yarn)
+```tsx
+import React, { FC } from 'react';
+import { useBool } from 'use-primitives'
+
+export interface MyComponentProps {
+  
+}
+
+export const MyComponent: FC<MyComponentProps> = ({
+
+}) => {
+  const modalstate = useBool();
+  
+  return (
+    <>
+      <button onClick={modalstate.settrue}>Open modal</button>
+
+      {
+        modalstate.value &&
+        <div className="MyModal">
+          Hello from modal!
+          <button onClick={modalstate.close}>
+            Close
+          </button>
+        </div>
+      }
+    </>
+  );
+}
+```
+
+## Textfield
+
+```tsx
+import React, { FC, useEffect } from 'react';
+import { fallback, pipe, useStr } from 'use-primitives';
+
+
+export interface MyTextfieldProps {
+  onChange?: (value: string) => any;
+}
+
+const mapvalue = (e: React.ChangeEvent<HTMLInputElement>) => e.target.value;
+
+export const MyTextfield: FC<MyTextfieldProps> = ({
+  onChange = fallback(``),
+}) => {
+  const field = useStr(`hello world`);
+
+  useEffect(() => void onChange(field.value), [field.value]);
+  
+  return (
+    <>
+      <input onChange={pipe(mapvalue, field.set, onChange)} value={field.value} type="text" />
+      Your value is: {field.value}
+    </>
+  );
+}
+```
+
+## Data validation
+
+```tsx
+import * as React from 'react';
+import { useValidateShape, usePredicate, useValidate, isnumber, isstring, pipe, predicate, num, str } from 'use-primitives';
+
+const requiredstr = pipe(
+   str.trim,
+   str.length,
+   num.greaterequalthan(2),
+);
+
+const useIsAdult = usePredicate(predicate.and(isnumber, num.greaterequalthan(18)));
+const useIsValidName = usePredicate(predicate.and(isstring, requiredstr));
+
+const shape = {
+   age: useValidate(useIsAdult, `you must be adult to have your own bank account`),
+   firstname: useValidate(useIsValidName, `First name is required`),
+   lastname: useValidate(useIsValidName, `Last name is required`),
+};
+
+const mapeventvalue = (event: React.ChangeEvent<HTMLInputElement>) => event.target.value;
+
+export const MySubscriptionForm = () => {
+   const form = useValidateShape(shape);
+
+   return (
+     <section>
+       <label>
+         First name
+         <input onChange={pipe(mapeventvalue, form.shape.firstname.set)} value={form.shape.firstname.value} type="text" />
+         <small>{form.shape.firstname.message}</small>
+       </label>
+       <label>
+         Last name
+         <input onChange={pipe(mapeventvalue, form.shape.lastname.set)} value={form.shape.lastname.value} type="text" />
+         <small>{form.shape.lastname.message}</small>
+       </label>
+       <label>
+         Confirm your Age
+         <input onChange={pipe(mapeventvalue, form.shape.age.set)} value={form.shape.age.value} type="number" />
+         <small>{form.shape.age.message}</small>
+       </label>
+       <button disabled={!form.valid}>
+         Subscribe
+       </button>
+     </section>
+   );
+}
+
+```
 
 # ️❤️ Contributing
 
