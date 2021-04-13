@@ -1,5 +1,5 @@
-use-primitives
-==============
+use-tiinvo
+==========
 
 A collection of React hooks for primitives handling and data validation.
 
