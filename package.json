@@ -1,6 +1,6 @@
 {
   "name": "use-primitives",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "licence": "MIT",
   "author": "Paolo Roth",
   "main": "dist/cjs/index.js",
@@ -18,7 +18,7 @@
   "scripts": {
     "changelog": "standard-changelog",
     "clean": "rimraf dist",
-    "docs": "npm run clean && typedoc --options typedoc.markdown.json",
+    "docs": "npm run clean && rimraf docs && typedoc --options typedoc.markdown.json",
     "lint": "eslint -c ./.eslintrc.json src/**/*.ts --fix",
     "prepublishOnly": "rimraf dist && rollup -c ./rollup.config.js",
     "size-limit": "npm run clean && tsc -p . && size-limit",
