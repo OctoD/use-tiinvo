@@ -1,4 +1,4 @@
-[use-primitives](../README.md) / UseValidate
+[use-primitives - v1.0.0](../README.md) / UseValidate
 
 # Interface: UseValidate<T, K\>
 
@@ -31,7 +31,11 @@ Name |
 
 • `Optional` **message**: K
 
-Defined in: src/use-validate.ts:5
+The error message `K`. It is `K` if invalid, otherwise is `undefined`.
+
+**`since`** 1.0.0
+
+Defined in: [use-validate.ts:10](https://github.com/OctoD/use-primitives/blob/7b5eac0/src/use-validate.ts#L10)
 
 ___
 
@@ -39,9 +43,22 @@ ___
 
 • **reset**: *FnNullary*<void\>
 
+Resets the value to it's initial state.
+
+**`since`** 1.0.0
+
+**`example`** 
+```ts
+const foo = useValue(10);
+foo.set(20);
+console.log(foo.value) // 20
+foo.reset();
+console.log(foo.value) // 10
+```
+
 Inherited from: [UsePredicate](usepredicate.md).[reset](usepredicate.md#reset)
 
-Defined in: src/use-value.ts:5
+Defined in: [use-value.ts:18](https://github.com/OctoD/use-primitives/blob/7b5eac0/src/use-value.ts#L18)
 
 ___
 
@@ -49,9 +66,20 @@ ___
 
 • **set**: *FnUnary*<T, void\>
 
+Sets the value.
+
+**`since`** 1.0.0
+
+**`example`** 
+```ts
+const foo = useValue(10);
+foo.set(20);
+console.log(foo.value); // 20
+```
+
 Inherited from: [UsePredicate](usepredicate.md).[set](usepredicate.md#set)
 
-Defined in: src/use-value.ts:6
+Defined in: [use-value.ts:30](https://github.com/OctoD/use-primitives/blob/7b5eac0/src/use-value.ts#L30)
 
 ___
 
@@ -59,9 +87,13 @@ ___
 
 • **valid**: *boolean*
 
+True if the predicate is satisfied, otherwise false.
+
+**`since`** 1.0.0
+
 Inherited from: [UsePredicate](usepredicate.md).[valid](usepredicate.md#valid)
 
-Defined in: src/use-predicate.ts:5
+Defined in: [use-predicate.ts:9](https://github.com/OctoD/use-primitives/blob/7b5eac0/src/use-predicate.ts#L9)
 
 ___
 
@@ -69,6 +101,8 @@ ___
 
 • **value**: T
 
+The value.
+
 Inherited from: [UsePredicate](usepredicate.md).[value](usepredicate.md#value)
 
-Defined in: src/use-value.ts:10
+Defined in: [use-value.ts:37](https://github.com/OctoD/use-primitives/blob/7b5eac0/src/use-value.ts#L37)

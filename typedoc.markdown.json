@@ -8,5 +8,10 @@
     "src/common.ts",
     "**/__tests__/**"
   ],
+  "excludeExternals": true,
+  "excludeInternal": true,
+  "excludePrivate": true,
+  "excludeProtected": true,
+  "includeVersion": true,
   "theme": "markdown"
 }

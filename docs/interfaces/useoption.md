@@ -1,4 +1,4 @@
-[use-primitives](../README.md) / UseOption
+[use-primitives - v1.0.0](../README.md) / UseOption
 
 # Interface: UseOption<T\>
 
@@ -31,7 +31,11 @@ Name |
 
 • **none**: *boolean*
 
-Defined in: src/use-option.ts:6
+True if the passed `Option<T>` is `None`, otherwise false.
+
+**`since`** 1.0.0
+
+Defined in: [use-option.ts:10](https://github.com/OctoD/use-primitives/blob/7b5eac0/src/use-option.ts#L10)
 
 ___
 
@@ -39,9 +43,22 @@ ___
 
 • **reset**: *FnNullary*<void\>
 
+Resets the value to it's initial state.
+
+**`since`** 1.0.0
+
+**`example`** 
+```ts
+const foo = useValue(10);
+foo.set(20);
+console.log(foo.value) // 20
+foo.reset();
+console.log(foo.value) // 10
+```
+
 Inherited from: [UseValueFns](usevaluefns.md).[reset](usevaluefns.md#reset)
 
-Defined in: src/use-value.ts:5
+Defined in: [use-value.ts:18](https://github.com/OctoD/use-primitives/blob/7b5eac0/src/use-value.ts#L18)
 
 ___
 
@@ -49,9 +66,20 @@ ___
 
 • **set**: *FnUnary*<undefined \| *null* \| T, void\>
 
+Sets the value.
+
+**`since`** 1.0.0
+
+**`example`** 
+```ts
+const foo = useValue(10);
+foo.set(20);
+console.log(foo.value); // 20
+```
+
 Inherited from: [UseValueFns](usevaluefns.md).[set](usevaluefns.md#set)
 
-Defined in: src/use-value.ts:6
+Defined in: [use-value.ts:30](https://github.com/OctoD/use-primitives/blob/7b5eac0/src/use-value.ts#L30)
 
 ___
 
@@ -59,7 +87,11 @@ ___
 
 • **some**: *boolean*
 
-Defined in: src/use-option.ts:7
+True if the passed `Option<T>` is `Some`, otherwise false.
+
+**`since`** 1.0.0
+
+Defined in: [use-option.ts:15](https://github.com/OctoD/use-primitives/blob/7b5eac0/src/use-option.ts#L15)
 
 ___
 
@@ -67,7 +99,12 @@ ___
 
 • **unsafe**: T
 
-Defined in: src/use-option.ts:8
+The unsafe value. Be aware that this value could be possibly `null` or `undefined`,
+so check if is `some` before using it.
+
+**`since`** 1.0.0
+
+Defined in: [use-option.ts:21](https://github.com/OctoD/use-primitives/blob/7b5eac0/src/use-option.ts#L21)
 
 ___
 
@@ -75,4 +112,8 @@ ___
 
 • **value**: *Option*<T\>
 
-Defined in: src/use-option.ts:9
+Current value as `Option<T>`
+
+**`since`** 1.0.0
+
+Defined in: [use-option.ts:26](https://github.com/OctoD/use-primitives/blob/7b5eac0/src/use-option.ts#L26)

@@ -1,4 +1,4 @@
-[use-primitives](../README.md) / UseValue
+[use-primitives - v1.0.0](../README.md) / UseValue
 
 # Interface: UseValue<T\>
 
@@ -32,9 +32,22 @@ Name |
 
 • **reset**: *FnNullary*<void\>
 
+Resets the value to it's initial state.
+
+**`since`** 1.0.0
+
+**`example`** 
+```ts
+const foo = useValue(10);
+foo.set(20);
+console.log(foo.value) // 20
+foo.reset();
+console.log(foo.value) // 10
+```
+
 Inherited from: [UseValueFns](usevaluefns.md).[reset](usevaluefns.md#reset)
 
-Defined in: src/use-value.ts:5
+Defined in: [use-value.ts:18](https://github.com/OctoD/use-primitives/blob/7b5eac0/src/use-value.ts#L18)
 
 ___
 
@@ -42,9 +55,20 @@ ___
 
 • **set**: *FnUnary*<T, void\>
 
+Sets the value.
+
+**`since`** 1.0.0
+
+**`example`** 
+```ts
+const foo = useValue(10);
+foo.set(20);
+console.log(foo.value); // 20
+```
+
 Inherited from: [UseValueFns](usevaluefns.md).[set](usevaluefns.md#set)
 
-Defined in: src/use-value.ts:6
+Defined in: [use-value.ts:30](https://github.com/OctoD/use-primitives/blob/7b5eac0/src/use-value.ts#L30)
 
 ___
 
@@ -52,4 +76,6 @@ ___
 
 • **value**: T
 
-Defined in: src/use-value.ts:10
+The value.
+
+Defined in: [use-value.ts:37](https://github.com/OctoD/use-primitives/blob/7b5eac0/src/use-value.ts#L37)

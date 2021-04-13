@@ -1,11 +1,12 @@
-use-primitives
+use-primitives - v1.0.0
 
-# use-primitives
+# use-primitives - v1.0.0
 
 ## Table of contents
 
 ### Interfaces
 
+- [UseBool](interfaces/usebool.md)
 - [UseOption](interfaces/useoption.md)
 - [UsePredicate](interfaces/usepredicate.md)
 - [UseResult](interfaces/useresult.md)
@@ -50,7 +51,7 @@ Name |
 :------ |
 `T` |
 
-Defined in: src/use-predicate.ts:8
+Defined in: [use-predicate.ts:12](https://github.com/OctoD/use-primitives/blob/7b5eac0/src/use-predicate.ts#L12)
 
 ___
 
@@ -64,7 +65,7 @@ Name |
 :------ |
 `T` |
 
-Defined in: src/use-safe.ts:8
+Defined in: [use-safe.ts:13](https://github.com/OctoD/use-primitives/blob/7b5eac0/src/use-safe.ts#L13)
 
 ___
 
@@ -79,29 +80,104 @@ Name |
 `T` |
 `K` |
 
-Defined in: src/use-validate.ts:8
+Defined in: [use-validate.ts:13](https://github.com/OctoD/use-primitives/blob/7b5eac0/src/use-validate.ts#L13)
 
 ## Functions
 
 ### useArray
 
-▸ `Const`**useArray**(`arg`: *unknown*[]): [*UseSafe*](interfaces/usesafe.md)<unknown[]\>
+▸ `Const`**useArray**<T\>(`arr`: T[]): [*UseSafe*](interfaces/usesafe.md)<T[]\>
+
+Similar to use-safe, but for arrays.
+
+**`since`** 1.0.0
+
+**`example`** 
+```tsx
+import * as React from 'react';
+import { useArray, isstring } from 'use-primitives';
+
+export interface MyComponentProps {
+   labels: string | string[];
+}
+
+export const MyComponent: React.FC<MyComponentProps> = ({
+   labels,
+}) => {
+   const arr = useArray(labels);
+
+   return (
+     <div>
+       {
+         arr.valid && arr.map((arg, index) => <p key={index}>{arg.toUpperCase()}</p>)
+       }
+       {
+         isstring(arr.value) && <p>{arr.toUpperCase()}</p>
+       }
+     </div>
+   )
+}
+```
+
+#### Type parameters:
+
+Name |
+:------ |
+`T` |
 
 #### Parameters:
 
 Name | Type |
 :------ | :------ |
-`arg` | *unknown*[] |
+`arr` | T[] |
 
-**Returns:** [*UseSafe*](interfaces/usesafe.md)<unknown[]\>
+**Returns:** [*UseSafe*](interfaces/usesafe.md)<T[]\>
 
-Defined in: src/use-array.ts:4
+Defined in: [use-array.ts:35](https://github.com/OctoD/use-primitives/blob/7b5eac0/src/use-array.ts#L35)
 
 ___
 
 ### useArrayOf
 
 ▸ `Const`**useArrayOf**<T\>(`typeguard`: *Typeguard*<T\>): [*UseSafeHook*](README.md#usesafehook)<T[]\>
+
+Similar to `useArray`, but uses a typeguard to check if an array is valid or not.
+
+**`since`** 1.0.0
+
+**`example`** 
+```tsx
+import * as React from 'react';
+import { useArrayOf, isstring } from 'use-primitives';
+
+const useStringArray = useArrayOf(isstring);
+
+export interface MyComponentProps {
+   items: (string | number)[];
+}
+
+export const MyComponent: React.FC<MyComponentProps> = ({
+   items,
+}) => {
+   const arr = useStringArray(items);
+
+   if (!arr.valid) {
+     return <>Invalid items</>
+   }
+
+   return (
+     <>
+       {
+         arr.value.map((item, index) => 
+           <p key={index}>
+             {item.toUpperCase()}
+           </p>
+         )
+       }
+     </>
+   )
+}
+```
 
 #### Type parameters:
 
@@ -117,13 +193,13 @@ Name | Type |
 
 **Returns:** [*UseSafeHook*](README.md#usesafehook)<T[]\>
 
-Defined in: src/use-array.ts:6
+Defined in: [use-array.ts:78](https://github.com/OctoD/use-primitives/blob/7b5eac0/src/use-array.ts#L78)
 
 ___
 
 ### useBool
 
-▸ `Const`**useBool**(`initialvalue?`: *boolean*): *object*
+▸ `Const`**useBool**(`initialvalue?`: *boolean*): [*UseBool*](interfaces/usebool.md)
 
 Good for everything which have an on/off state.
 
@@ -152,16 +228,9 @@ Name | Type | Default value |
 :------ | :------ | :------ |
 `initialvalue` | *boolean* | false |
 
-**Returns:** *object*
+**Returns:** [*UseBool*](interfaces/usebool.md)
 
-Name | Type |
-:------ | :------ |
-`setfalse` | () => *void* |
-`settrue` | () => *void* |
-`toggle` | () => *void* |
-`value` | *boolean* |
-
-Defined in: src/use-bool.ts:28
+Defined in: [use-bool.ts:67](https://github.com/OctoD/use-primitives/blob/7b5eac0/src/use-bool.ts#L67)
 
 ___
 
@@ -181,7 +250,7 @@ Name | Type |
 
 **Returns:** [*UseSafe*](interfaces/usesafe.md)<*null* \| number\>
 
-Defined in: src/use-num.ts:38
+Defined in: [use-num.ts:38](https://github.com/OctoD/use-primitives/blob/7b5eac0/src/use-num.ts#L38)
 
 ___
 
@@ -201,7 +270,7 @@ Name | Type |
 
 **Returns:** [*UseSafe*](interfaces/usesafe.md)<*null* \| string\>
 
-Defined in: src/use-str.ts:38
+Defined in: [use-str.ts:38](https://github.com/OctoD/use-primitives/blob/7b5eac0/src/use-str.ts#L38)
 
 ___
 
@@ -245,7 +314,7 @@ Name | Type |
 
 **Returns:** [*UseSafe*](interfaces/usesafe.md)<number\>
 
-Defined in: src/use-num.ts:32
+Defined in: [use-num.ts:32](https://github.com/OctoD/use-primitives/blob/7b5eac0/src/use-num.ts#L32)
 
 ___
 
@@ -300,7 +369,7 @@ Name | Type |
 
 **Returns:** [*UseOption*](interfaces/useoption.md)<T\>
 
-Defined in: src/use-option.ts:49
+Defined in: [use-option.ts:66](https://github.com/OctoD/use-primitives/blob/7b5eac0/src/use-option.ts#L66)
 
 ___
 
@@ -320,7 +389,7 @@ Name | Type |
 
 **Returns:** [*UseSafe*](interfaces/usesafe.md)<undefined \| number\>
 
-Defined in: src/use-num.ts:44
+Defined in: [use-num.ts:44](https://github.com/OctoD/use-primitives/blob/7b5eac0/src/use-num.ts#L44)
 
 ___
 
@@ -340,7 +409,7 @@ Name | Type |
 
 **Returns:** [*UseSafe*](interfaces/usesafe.md)<undefined \| string\>
 
-Defined in: src/use-str.ts:44
+Defined in: [use-str.ts:44](https://github.com/OctoD/use-primitives/blob/7b5eac0/src/use-str.ts#L44)
 
 ___
 
@@ -362,7 +431,7 @@ Name | Type |
 
 **Returns:** [*UsePredicateHook*](README.md#usepredicatehook)<T\>
 
-Defined in: src/use-predicate.ts:10
+Defined in: [use-predicate.ts:14](https://github.com/OctoD/use-primitives/blob/7b5eac0/src/use-predicate.ts#L14)
 
 ___
 
@@ -411,7 +480,7 @@ Name | Type |
 
 **Returns:** [*UseResult*](interfaces/useresult.md)<T\>
 
-Defined in: src/use-result.ts:42
+Defined in: [use-result.ts:58](https://github.com/OctoD/use-primitives/blob/7b5eac0/src/use-result.ts#L58)
 
 ___
 
@@ -462,7 +531,7 @@ Name | Type |
 
 **Returns:** [*UseSafeHook*](README.md#usesafehook)<T\>
 
-Defined in: src/use-safe.ts:42
+Defined in: [use-safe.ts:47](https://github.com/OctoD/use-primitives/blob/7b5eac0/src/use-safe.ts#L47)
 
 ___
 
@@ -506,7 +575,7 @@ Name | Type |
 
 **Returns:** [*UseSafe*](interfaces/usesafe.md)<string\>
 
-Defined in: src/use-str.ts:32
+Defined in: [use-str.ts:32](https://github.com/OctoD/use-primitives/blob/7b5eac0/src/use-str.ts#L32)
 
 ___
 
@@ -530,7 +599,7 @@ Name | Type |
 
 **Returns:** [*UseValidateHook*](README.md#usevalidatehook)<T, K\>
 
-Defined in: src/use-validate.ts:10
+Defined in: [use-validate.ts:15](https://github.com/OctoD/use-primitives/blob/7b5eac0/src/use-validate.ts#L15)
 
 ___
 
@@ -552,4 +621,4 @@ Name | Type |
 
 **Returns:** [*UseValue*](interfaces/usevalue.md)<T\>
 
-Defined in: src/use-value.ts:13
+Defined in: [use-value.ts:40](https://github.com/OctoD/use-primitives/blob/7b5eac0/src/use-value.ts#L40)
