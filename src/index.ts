@@ -9,4 +9,5 @@ export * from './use-result';
 export * from './use-safe';
 export * from './use-str';
 export * from './use-validate';
+export * from './use-validate-shape';
 export * from './use-value';
