@@ -1,5 +1,44 @@
+import { bind, fi, FnNullary } from 'tiinvo';
 import { useValue } from './use-value';
-import { bind, fi } from 'tiinvo';
+
+export interface UseBool {
+  /**
+   * Sets the value to false
+   */
+  setfalse: FnNullary<void>;
+  /**
+   * Sets the value to true
+   */
+  settrue: FnNullary<void>;
+  /**
+   * Toggles the value. Ideal for checkboxes and switch components.
+   * 
+   * @since 1.0.0
+   * @example
+   * ```tsx
+   * 
+   * import React from 'react';
+   * import { useBool, fi } from 'use-primitives';
+   * 
+   * export const MyComponent = () => {
+   *    const accepts = useBool(true);
+   *    const label = fi(accepts.value, `On`, `Off`);
+   * 
+   *    return (
+   *      <label onClick={accepts.toggle}>
+   *        <input value={accepts.value} type="checkbox" />
+   *        {label}
+   *      </label>
+   *    )
+   * }
+   * ```
+   */
+  toggle: FnNullary<void>;
+  /**
+   * The value.
+   */
+  value: boolean;
+}
 
 /**
  * Good for everything which have an on/off state.
@@ -25,7 +64,7 @@ import { bind, fi } from 'tiinvo';
  * @param {boolean} [initialvalue] is optional. `true` or `false` is admitted.
  * @returns 
  */
-export const useBool = (initialvalue = false) => {
+export const useBool = (initialvalue = false): UseBool => {
   const { value, set } = useValue(initialvalue);
   const settrue = bind(set, true);
   const setfalse = bind(set, false);

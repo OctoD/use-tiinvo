@@ -2,6 +2,11 @@ import { FnUnary, Typeguard } from 'tiinvo';
 import { useValue, UseValue } from './use-value';
 
 export interface UseSafe<T> extends UseValue<T> {
+  /**
+   * True if the `Typeguard<T>` check has passed, otherwise `false`.
+   * 
+   * @since 1.0.0
+   */
   valid: boolean;
 }
 

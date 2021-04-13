@@ -3,9 +3,26 @@ import { bind, option, pipe } from 'tiinvo';
 import { UseValueFns } from './use-value';
 
 export interface UseOption<T> extends UseValueFns<T | null | undefined> {
+  /**
+   * True if the passed `Option<T>` is `None`, otherwise false.
+   * @since 1.0.0
+   */
   none: boolean;
+  /**
+   * True if the passed `Option<T>` is `Some`, otherwise false.
+   * @since 1.0.0
+   */
   some: boolean;
+  /**
+   * The unsafe value. Be aware that this value could be possibly `null` or `undefined`,
+   * so check if is `some` before using it.
+   * @since 1.0.0
+   */
   unsafe: T;
+  /**
+   * Current value as `Option<T>`
+   * @since 1.0.0
+   */
   value: option.Option<T>;
 }
 

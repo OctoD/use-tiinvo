@@ -3,9 +3,25 @@ import { bind, result, pipe } from 'tiinvo';
 import { UseValueFns } from './use-value';
 
 export interface UseResult<T> extends UseValueFns<T | Error> {
+  /**
+   * True if `Result<T>` is `Ok<T>`, otherwise false.
+   * @since 1.0.0
+   */
   ok: boolean;
+  /**
+   * True if `Result<T>` is `Err`, otherwise false.
+   * @since 1.0.0
+   */
   err: boolean;
+  /**
+   * The unsafe value. It could be both `T` or `Error`, so check if `ok` before using it.
+   * @since 1.0.0
+   */
   unsafe: T;
+  /**
+   * The value as `Result<T>`
+   * @since 1.0.0
+   */
   value: result.Result<T>;
 }
 
