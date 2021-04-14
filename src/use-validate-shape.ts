@@ -18,6 +18,10 @@ export interface UseValidateShape<T extends ValidateShapeHook<any>> {
    */
   shape: ValidateShape<T>;
   /**
+   * Current shape value
+   */
+  value: UseValidateValue<T>;
+  /**
    * True if the shape is valid, otherwise false
    * @since 1.0.0
    */
@@ -114,6 +118,9 @@ export const useValidateShape = <T extends { [index: string]: UseValidateHook<an
 
     return {
       valid: validation.value,
+      value: new Proxy(validator, {
+        get: (target, property) => target[property].value,
+      }),
       shape: validator,
     }
   }

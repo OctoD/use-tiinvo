@@ -47,4 +47,8 @@ test(`useValidateShape`, () => {
   expect(result.current.shape.firstname.valid).toBeTruthy();
   expect(result.current.shape.lastname.valid).toBeTruthy();
   expect(result.current.shape.age.valid).toBeTruthy();
+
+  expect(result.current.value.age).toBe(18)
+  expect(result.current.value.firstname).toBe(`hello`)
+  expect(result.current.value.lastname).toBe(`world`)
 });
