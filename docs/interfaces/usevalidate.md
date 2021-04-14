@@ -1,4 +1,4 @@
-[use-primitives - v1.0.0](../README.md) / UseValidate
+[use-tiinvo - v1.0.2](../README.md) / UseValidate
 
 # Interface: UseValidate<T, K\>
 
@@ -35,7 +35,7 @@ The error message `K`. It is `K` if invalid, otherwise is `undefined`.
 
 **`since`** 1.0.0
 
-Defined in: [use-validate.ts:10](https://github.com/OctoD/use-primitives/blob/7b5eac0/src/use-validate.ts#L10)
+Defined in: [use-validate.ts:10](https://github.com/OctoD/use-primitives/blob/55281b1/src/use-validate.ts#L10)
 
 ___
 
@@ -58,7 +58,7 @@ console.log(foo.value) // 10
 
 Inherited from: [UsePredicate](usepredicate.md).[reset](usepredicate.md#reset)
 
-Defined in: [use-value.ts:18](https://github.com/OctoD/use-primitives/blob/7b5eac0/src/use-value.ts#L18)
+Defined in: [use-value.ts:18](https://github.com/OctoD/use-primitives/blob/55281b1/src/use-value.ts#L18)
 
 ___
 
@@ -79,7 +79,7 @@ console.log(foo.value); // 20
 
 Inherited from: [UsePredicate](usepredicate.md).[set](usepredicate.md#set)
 
-Defined in: [use-value.ts:30](https://github.com/OctoD/use-primitives/blob/7b5eac0/src/use-value.ts#L30)
+Defined in: [use-value.ts:30](https://github.com/OctoD/use-primitives/blob/55281b1/src/use-value.ts#L30)
 
 ___
 
@@ -93,7 +93,7 @@ True if the predicate is satisfied, otherwise false.
 
 Inherited from: [UsePredicate](usepredicate.md).[valid](usepredicate.md#valid)
 
-Defined in: [use-predicate.ts:9](https://github.com/OctoD/use-primitives/blob/7b5eac0/src/use-predicate.ts#L9)
+Defined in: [use-predicate.ts:9](https://github.com/OctoD/use-primitives/blob/55281b1/src/use-predicate.ts#L9)
 
 ___
 
@@ -105,4 +105,4 @@ The value.
 
 Inherited from: [UsePredicate](usepredicate.md).[value](usepredicate.md#value)
 
-Defined in: [use-value.ts:37](https://github.com/OctoD/use-primitives/blob/7b5eac0/src/use-value.ts#L37)
+Defined in: [use-value.ts:37](https://github.com/OctoD/use-primitives/blob/55281b1/src/use-value.ts#L37)

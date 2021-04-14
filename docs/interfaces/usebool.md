@@ -1,4 +1,4 @@
-[use-primitives - v1.0.0](../README.md) / UseBool
+[use-tiinvo - v1.0.2](../README.md) / UseBool
 
 # Interface: UseBool
 
@@ -19,7 +19,7 @@
 
 Sets the value to false
 
-Defined in: [use-bool.ts:8](https://github.com/OctoD/use-primitives/blob/7b5eac0/src/use-bool.ts#L8)
+Defined in: [use-bool.ts:8](https://github.com/OctoD/use-primitives/blob/55281b1/src/use-bool.ts#L8)
 
 ___
 
@@ -29,7 +29,7 @@ ___
 
 Sets the value to true
 
-Defined in: [use-bool.ts:12](https://github.com/OctoD/use-primitives/blob/7b5eac0/src/use-bool.ts#L12)
+Defined in: [use-bool.ts:12](https://github.com/OctoD/use-primitives/blob/55281b1/src/use-bool.ts#L12)
 
 ___
 
@@ -60,7 +60,7 @@ export const MyComponent = () => {
 }
 ```
 
-Defined in: [use-bool.ts:36](https://github.com/OctoD/use-primitives/blob/7b5eac0/src/use-bool.ts#L36)
+Defined in: [use-bool.ts:36](https://github.com/OctoD/use-primitives/blob/55281b1/src/use-bool.ts#L36)
 
 ___
 
@@ -70,4 +70,4 @@ ___
 
 The value.
 
-Defined in: [use-bool.ts:40](https://github.com/OctoD/use-primitives/blob/7b5eac0/src/use-bool.ts#L40)
+Defined in: [use-bool.ts:40](https://github.com/OctoD/use-primitives/blob/55281b1/src/use-bool.ts#L40)

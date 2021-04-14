@@ -1,4 +1,4 @@
-[use-primitives - v1.0.0](../README.md) / UseValueFns
+[use-tiinvo - v1.0.2](../README.md) / UseValueFns
 
 # Interface: UseValueFns<T\>
 
@@ -44,7 +44,7 @@ foo.reset();
 console.log(foo.value) // 10
 ```
 
-Defined in: [use-value.ts:18](https://github.com/OctoD/use-primitives/blob/7b5eac0/src/use-value.ts#L18)
+Defined in: [use-value.ts:18](https://github.com/OctoD/use-primitives/blob/55281b1/src/use-value.ts#L18)
 
 ___
 
@@ -63,4 +63,4 @@ foo.set(20);
 console.log(foo.value); // 20
 ```
 
-Defined in: [use-value.ts:30](https://github.com/OctoD/use-primitives/blob/7b5eac0/src/use-value.ts#L30)
+Defined in: [use-value.ts:30](https://github.com/OctoD/use-primitives/blob/55281b1/src/use-value.ts#L30)

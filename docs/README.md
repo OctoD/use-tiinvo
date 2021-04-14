@@ -1,6 +1,6 @@
-use-primitives - v1.0.0
+use-tiinvo - v1.0.2
 
-# use-primitives - v1.0.0
+# use-tiinvo - v1.0.2
 
 ## Table of contents
 
@@ -12,6 +12,7 @@ use-primitives - v1.0.0
 - [UseResult](interfaces/useresult.md)
 - [UseSafe](interfaces/usesafe.md)
 - [UseValidate](interfaces/usevalidate.md)
+- [UseValidateShape](interfaces/usevalidateshape.md)
 - [UseValue](interfaces/usevalue.md)
 - [UseValueFns](interfaces/usevaluefns.md)
 
@@ -20,6 +21,9 @@ use-primitives - v1.0.0
 - [UsePredicateHook](README.md#usepredicatehook)
 - [UseSafeHook](README.md#usesafehook)
 - [UseValidateHook](README.md#usevalidatehook)
+- [UseValidateValue](README.md#usevalidatevalue)
+- [ValidateShape](README.md#validateshape)
+- [ValidateShapeHook](README.md#validateshapehook)
 
 ### Functions
 
@@ -37,6 +41,7 @@ use-primitives - v1.0.0
 - [useSafeFactory](README.md#usesafefactory)
 - [useStr](README.md#usestr)
 - [useValidate](README.md#usevalidate)
+- [useValidateShape](README.md#usevalidateshape)
 - [useValue](README.md#usevalue)
 
 ## Type aliases
@@ -51,7 +56,7 @@ Name |
 :------ |
 `T` |
 
-Defined in: [use-predicate.ts:12](https://github.com/OctoD/use-primitives/blob/7b5eac0/src/use-predicate.ts#L12)
+Defined in: [use-predicate.ts:12](https://github.com/OctoD/use-primitives/blob/55281b1/src/use-predicate.ts#L12)
 
 ___
 
@@ -65,7 +70,7 @@ Name |
 :------ |
 `T` |
 
-Defined in: [use-safe.ts:13](https://github.com/OctoD/use-primitives/blob/7b5eac0/src/use-safe.ts#L13)
+Defined in: [use-safe.ts:13](https://github.com/OctoD/use-primitives/blob/55281b1/src/use-safe.ts#L13)
 
 ___
 
@@ -80,7 +85,49 @@ Name |
 `T` |
 `K` |
 
-Defined in: [use-validate.ts:13](https://github.com/OctoD/use-primitives/blob/7b5eac0/src/use-validate.ts#L13)
+Defined in: [use-validate.ts:13](https://github.com/OctoD/use-primitives/blob/55281b1/src/use-validate.ts#L13)
+
+___
+
+### UseValidateValue
+
+Ƭ **UseValidateValue**<T\>: { [key in keyof T]: T[key] extends UseValidateHook<infer U, any\> ? U : never}
+
+#### Type parameters:
+
+Name | Type |
+:------ | :------ |
+`T` | *object* |
+
+Defined in: [use-validate-shape.ts:31](https://github.com/OctoD/use-primitives/blob/55281b1/src/use-validate-shape.ts#L31)
+
+___
+
+### ValidateShape
+
+Ƭ **ValidateShape**<T\>: { [key in keyof T]: T[key] extends UseValidateHook<infer U, infer K\> ? UseValidate<U, K\> : never}
+
+#### Type parameters:
+
+Name | Type |
+:------ | :------ |
+`T` | [*ValidateShapeHook*](README.md#validateshapehook)<any\> |
+
+Defined in: [use-validate-shape.ts:10](https://github.com/OctoD/use-primitives/blob/55281b1/src/use-validate-shape.ts#L10)
+
+___
+
+### ValidateShapeHook
+
+Ƭ **ValidateShapeHook**<T\>: { [key in keyof T]: T[key] extends UseValidateHook<infer U, infer K\> ? UseValidateHook<U, K\> : never}
+
+#### Type parameters:
+
+Name | Type |
+:------ | :------ |
+`T` | *any* |
+
+Defined in: [use-validate-shape.ts:6](https://github.com/OctoD/use-primitives/blob/55281b1/src/use-validate-shape.ts#L6)
 
 ## Functions
 
@@ -133,7 +180,7 @@ Name | Type |
 
 **Returns:** [*UseSafe*](interfaces/usesafe.md)<T[]\>
 
-Defined in: [use-array.ts:35](https://github.com/OctoD/use-primitives/blob/7b5eac0/src/use-array.ts#L35)
+Defined in: [use-array.ts:35](https://github.com/OctoD/use-primitives/blob/55281b1/src/use-array.ts#L35)
 
 ___
 
@@ -193,7 +240,7 @@ Name | Type |
 
 **Returns:** [*UseSafeHook*](README.md#usesafehook)<T[]\>
 
-Defined in: [use-array.ts:78](https://github.com/OctoD/use-primitives/blob/7b5eac0/src/use-array.ts#L78)
+Defined in: [use-array.ts:78](https://github.com/OctoD/use-primitives/blob/55281b1/src/use-array.ts#L78)
 
 ___
 
@@ -230,7 +277,7 @@ Name | Type | Default value |
 
 **Returns:** [*UseBool*](interfaces/usebool.md)
 
-Defined in: [use-bool.ts:67](https://github.com/OctoD/use-primitives/blob/7b5eac0/src/use-bool.ts#L67)
+Defined in: [use-bool.ts:67](https://github.com/OctoD/use-primitives/blob/55281b1/src/use-bool.ts#L67)
 
 ___
 
@@ -250,7 +297,7 @@ Name | Type |
 
 **Returns:** [*UseSafe*](interfaces/usesafe.md)<*null* \| number\>
 
-Defined in: [use-num.ts:38](https://github.com/OctoD/use-primitives/blob/7b5eac0/src/use-num.ts#L38)
+Defined in: [use-num.ts:38](https://github.com/OctoD/use-primitives/blob/55281b1/src/use-num.ts#L38)
 
 ___
 
@@ -270,7 +317,7 @@ Name | Type |
 
 **Returns:** [*UseSafe*](interfaces/usesafe.md)<*null* \| string\>
 
-Defined in: [use-str.ts:38](https://github.com/OctoD/use-primitives/blob/7b5eac0/src/use-str.ts#L38)
+Defined in: [use-str.ts:38](https://github.com/OctoD/use-primitives/blob/55281b1/src/use-str.ts#L38)
 
 ___
 
@@ -314,7 +361,7 @@ Name | Type |
 
 **Returns:** [*UseSafe*](interfaces/usesafe.md)<number\>
 
-Defined in: [use-num.ts:32](https://github.com/OctoD/use-primitives/blob/7b5eac0/src/use-num.ts#L32)
+Defined in: [use-num.ts:32](https://github.com/OctoD/use-primitives/blob/55281b1/src/use-num.ts#L32)
 
 ___
 
@@ -369,7 +416,7 @@ Name | Type |
 
 **Returns:** [*UseOption*](interfaces/useoption.md)<T\>
 
-Defined in: [use-option.ts:66](https://github.com/OctoD/use-primitives/blob/7b5eac0/src/use-option.ts#L66)
+Defined in: [use-option.ts:66](https://github.com/OctoD/use-primitives/blob/55281b1/src/use-option.ts#L66)
 
 ___
 
@@ -389,7 +436,7 @@ Name | Type |
 
 **Returns:** [*UseSafe*](interfaces/usesafe.md)<undefined \| number\>
 
-Defined in: [use-num.ts:44](https://github.com/OctoD/use-primitives/blob/7b5eac0/src/use-num.ts#L44)
+Defined in: [use-num.ts:44](https://github.com/OctoD/use-primitives/blob/55281b1/src/use-num.ts#L44)
 
 ___
 
@@ -409,7 +456,7 @@ Name | Type |
 
 **Returns:** [*UseSafe*](interfaces/usesafe.md)<undefined \| string\>
 
-Defined in: [use-str.ts:44](https://github.com/OctoD/use-primitives/blob/7b5eac0/src/use-str.ts#L44)
+Defined in: [use-str.ts:44](https://github.com/OctoD/use-primitives/blob/55281b1/src/use-str.ts#L44)
 
 ___
 
@@ -431,7 +478,7 @@ Name | Type |
 
 **Returns:** [*UsePredicateHook*](README.md#usepredicatehook)<T\>
 
-Defined in: [use-predicate.ts:14](https://github.com/OctoD/use-primitives/blob/7b5eac0/src/use-predicate.ts#L14)
+Defined in: [use-predicate.ts:14](https://github.com/OctoD/use-primitives/blob/55281b1/src/use-predicate.ts#L14)
 
 ___
 
@@ -480,7 +527,7 @@ Name | Type |
 
 **Returns:** [*UseResult*](interfaces/useresult.md)<T\>
 
-Defined in: [use-result.ts:58](https://github.com/OctoD/use-primitives/blob/7b5eac0/src/use-result.ts#L58)
+Defined in: [use-result.ts:58](https://github.com/OctoD/use-primitives/blob/55281b1/src/use-result.ts#L58)
 
 ___
 
@@ -531,7 +578,7 @@ Name | Type |
 
 **Returns:** [*UseSafeHook*](README.md#usesafehook)<T\>
 
-Defined in: [use-safe.ts:47](https://github.com/OctoD/use-primitives/blob/7b5eac0/src/use-safe.ts#L47)
+Defined in: [use-safe.ts:47](https://github.com/OctoD/use-primitives/blob/55281b1/src/use-safe.ts#L47)
 
 ___
 
@@ -575,7 +622,7 @@ Name | Type |
 
 **Returns:** [*UseSafe*](interfaces/usesafe.md)<string\>
 
-Defined in: [use-str.ts:32](https://github.com/OctoD/use-primitives/blob/7b5eac0/src/use-str.ts#L32)
+Defined in: [use-str.ts:32](https://github.com/OctoD/use-primitives/blob/55281b1/src/use-str.ts#L32)
 
 ___
 
@@ -599,7 +646,84 @@ Name | Type |
 
 **Returns:** [*UseValidateHook*](README.md#usevalidatehook)<T, K\>
 
-Defined in: [use-validate.ts:15](https://github.com/OctoD/use-primitives/blob/7b5eac0/src/use-validate.ts#L15)
+Defined in: [use-validate.ts:15](https://github.com/OctoD/use-primitives/blob/55281b1/src/use-validate.ts#L15)
+
+___
+
+### useValidateShape
+
+▸ `Const`**useValidateShape**<T\>(`shape`: T): *function*
+
+Given a shape of `UseValidate<any, K>` hooks, it validates it each time it mutates.
+
+**`since`** 1.0.0
+
+**`example`** 
+```tsx
+import * as React from 'react';
+import { useValidateShape, usePredicate, useValidate, isnumber, isstring, pipe, predicate, num, str } from 'use-primitives';
+
+const requiredstr = pipe(
+   str.trim,
+   str.length,
+   num.greaterequalthan(2),
+);
+
+const useIsAdult = usePredicate(predicate.and(isnumber, num.greaterequalthan(18)));
+const useIsValidName = usePredicate(predicate.and(isstring, requiredstr));
+
+const shape = {
+   age: useValidate(useIsAdult, `you must be adult to have your own bank account`),
+   firstname: useValidate(useIsValidName, `First name is required`),
+   lastname: useValidate(useIsValidName, `Last name is required`),
+};
+
+const mapeventvalue = (event: React.ChangeEvent<HTMLInputElement>) => event.target.value;
+
+export const MySubscriptionForm = () => {
+   const form = useValidateShape(shape);
+
+   return (
+     <section>
+       <label>
+         First name
+         <input onChange={pipe(mapeventvalue, form.shape.firstname.set)} value={form.shape.firstname.value} type="text" />
+         <small>{form.shape.firstname.message}</small>
+       </label>
+       <label>
+         Last name
+         <input onChange={pipe(mapeventvalue, form.shape.lastname.set)} value={form.shape.lastname.value} type="text" />
+         <small>{form.shape.lastname.message}</small>
+       </label>
+       <label>
+         Confirm your Age
+         <input onChange={pipe(mapeventvalue, form.shape.age.set)} value={form.shape.age.value} type="number" />
+         <small>{form.shape.age.message}</small>
+       </label>
+       <button disabled={!form.valid}>
+         Subscribe
+       </button>
+     </section>
+   );
+}
+
+```
+
+#### Type parameters:
+
+Name | Type |
+:------ | :------ |
+`T` | *object* |
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`shape` | T |
+
+**Returns:** (`values`: [*UseValidateValue*](README.md#usevalidatevalue)<T\>) => [*UseValidateShape*](interfaces/usevalidateshape.md)<T\>
+
+Defined in: [use-validate-shape.ts:90](https://github.com/OctoD/use-primitives/blob/55281b1/src/use-validate-shape.ts#L90)
 
 ___
 
@@ -621,4 +745,4 @@ Name | Type |
 
 **Returns:** [*UseValue*](interfaces/usevalue.md)<T\>
 
-Defined in: [use-value.ts:40](https://github.com/OctoD/use-primitives/blob/7b5eac0/src/use-value.ts#L40)
+Defined in: [use-value.ts:40](https://github.com/OctoD/use-primitives/blob/55281b1/src/use-value.ts#L40)

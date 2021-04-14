@@ -1,4 +1,4 @@
-[use-primitives - v1.0.0](../README.md) / UseOption
+[use-tiinvo - v1.0.2](../README.md) / UseOption
 
 # Interface: UseOption<T\>
 
@@ -35,7 +35,7 @@ True if the passed `Option<T>` is `None`, otherwise false.
 
 **`since`** 1.0.0
 
-Defined in: [use-option.ts:10](https://github.com/OctoD/use-primitives/blob/7b5eac0/src/use-option.ts#L10)
+Defined in: [use-option.ts:10](https://github.com/OctoD/use-primitives/blob/55281b1/src/use-option.ts#L10)
 
 ___
 
@@ -58,7 +58,7 @@ console.log(foo.value) // 10
 
 Inherited from: [UseValueFns](usevaluefns.md).[reset](usevaluefns.md#reset)
 
-Defined in: [use-value.ts:18](https://github.com/OctoD/use-primitives/blob/7b5eac0/src/use-value.ts#L18)
+Defined in: [use-value.ts:18](https://github.com/OctoD/use-primitives/blob/55281b1/src/use-value.ts#L18)
 
 ___
 
@@ -79,7 +79,7 @@ console.log(foo.value); // 20
 
 Inherited from: [UseValueFns](usevaluefns.md).[set](usevaluefns.md#set)
 
-Defined in: [use-value.ts:30](https://github.com/OctoD/use-primitives/blob/7b5eac0/src/use-value.ts#L30)
+Defined in: [use-value.ts:30](https://github.com/OctoD/use-primitives/blob/55281b1/src/use-value.ts#L30)
 
 ___
 
@@ -91,7 +91,7 @@ True if the passed `Option<T>` is `Some`, otherwise false.
 
 **`since`** 1.0.0
 
-Defined in: [use-option.ts:15](https://github.com/OctoD/use-primitives/blob/7b5eac0/src/use-option.ts#L15)
+Defined in: [use-option.ts:15](https://github.com/OctoD/use-primitives/blob/55281b1/src/use-option.ts#L15)
 
 ___
 
@@ -104,7 +104,7 @@ so check if is `some` before using it.
 
 **`since`** 1.0.0
 
-Defined in: [use-option.ts:21](https://github.com/OctoD/use-primitives/blob/7b5eac0/src/use-option.ts#L21)
+Defined in: [use-option.ts:21](https://github.com/OctoD/use-primitives/blob/55281b1/src/use-option.ts#L21)
 
 ___
 
@@ -116,4 +116,4 @@ Current value as `Option<T>`
 
 **`since`** 1.0.0
 
-Defined in: [use-option.ts:26](https://github.com/OctoD/use-primitives/blob/7b5eac0/src/use-option.ts#L26)
+Defined in: [use-option.ts:26](https://github.com/OctoD/use-primitives/blob/55281b1/src/use-option.ts#L26)

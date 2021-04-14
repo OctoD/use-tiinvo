@@ -1,4 +1,4 @@
-[use-primitives - v1.0.0](../README.md) / UseResult
+[use-tiinvo - v1.0.2](../README.md) / UseResult
 
 # Interface: UseResult<T\>
 
@@ -35,7 +35,7 @@ True if `Result<T>` is `Err`, otherwise false.
 
 **`since`** 1.0.0
 
-Defined in: [use-result.ts:15](https://github.com/OctoD/use-primitives/blob/7b5eac0/src/use-result.ts#L15)
+Defined in: [use-result.ts:15](https://github.com/OctoD/use-primitives/blob/55281b1/src/use-result.ts#L15)
 
 ___
 
@@ -47,7 +47,7 @@ True if `Result<T>` is `Ok<T>`, otherwise false.
 
 **`since`** 1.0.0
 
-Defined in: [use-result.ts:10](https://github.com/OctoD/use-primitives/blob/7b5eac0/src/use-result.ts#L10)
+Defined in: [use-result.ts:10](https://github.com/OctoD/use-primitives/blob/55281b1/src/use-result.ts#L10)
 
 ___
 
@@ -70,7 +70,7 @@ console.log(foo.value) // 10
 
 Inherited from: [UseValueFns](usevaluefns.md).[reset](usevaluefns.md#reset)
 
-Defined in: [use-value.ts:18](https://github.com/OctoD/use-primitives/blob/7b5eac0/src/use-value.ts#L18)
+Defined in: [use-value.ts:18](https://github.com/OctoD/use-primitives/blob/55281b1/src/use-value.ts#L18)
 
 ___
 
@@ -91,7 +91,7 @@ console.log(foo.value); // 20
 
 Inherited from: [UseValueFns](usevaluefns.md).[set](usevaluefns.md#set)
 
-Defined in: [use-value.ts:30](https://github.com/OctoD/use-primitives/blob/7b5eac0/src/use-value.ts#L30)
+Defined in: [use-value.ts:30](https://github.com/OctoD/use-primitives/blob/55281b1/src/use-value.ts#L30)
 
 ___
 
@@ -103,7 +103,7 @@ The unsafe value. It could be both `T` or `Error`, so check if `ok` before using
 
 **`since`** 1.0.0
 
-Defined in: [use-result.ts:20](https://github.com/OctoD/use-primitives/blob/7b5eac0/src/use-result.ts#L20)
+Defined in: [use-result.ts:20](https://github.com/OctoD/use-primitives/blob/55281b1/src/use-result.ts#L20)
 
 ___
 
@@ -115,4 +115,4 @@ The value as `Result<T>`
 
 **`since`** 1.0.0
 
-Defined in: [use-result.ts:25](https://github.com/OctoD/use-primitives/blob/7b5eac0/src/use-result.ts#L25)
+Defined in: [use-result.ts:25](https://github.com/OctoD/use-primitives/blob/55281b1/src/use-result.ts#L25)

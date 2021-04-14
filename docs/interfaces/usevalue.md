@@ -1,4 +1,4 @@
-[use-primitives - v1.0.0](../README.md) / UseValue
+[use-tiinvo - v1.0.2](../README.md) / UseValue
 
 # Interface: UseValue<T\>
 
@@ -47,7 +47,7 @@ console.log(foo.value) // 10
 
 Inherited from: [UseValueFns](usevaluefns.md).[reset](usevaluefns.md#reset)
 
-Defined in: [use-value.ts:18](https://github.com/OctoD/use-primitives/blob/7b5eac0/src/use-value.ts#L18)
+Defined in: [use-value.ts:18](https://github.com/OctoD/use-primitives/blob/55281b1/src/use-value.ts#L18)
 
 ___
 
@@ -68,7 +68,7 @@ console.log(foo.value); // 20
 
 Inherited from: [UseValueFns](usevaluefns.md).[set](usevaluefns.md#set)
 
-Defined in: [use-value.ts:30](https://github.com/OctoD/use-primitives/blob/7b5eac0/src/use-value.ts#L30)
+Defined in: [use-value.ts:30](https://github.com/OctoD/use-primitives/blob/55281b1/src/use-value.ts#L30)
 
 ___
 
@@ -78,4 +78,4 @@ ___
 
 The value.
 
-Defined in: [use-value.ts:37](https://github.com/OctoD/use-primitives/blob/7b5eac0/src/use-value.ts#L37)
+Defined in: [use-value.ts:37](https://github.com/OctoD/use-primitives/blob/55281b1/src/use-value.ts#L37)
