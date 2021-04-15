@@ -51,5 +51,6 @@ test(`useValidateShape`, () => {
   expect(result.current.value.age).toBe(18)
   expect(result.current.value.firstname).toBe(`hello`)
   expect(result.current.value.lastname).toBe(`world`)
+  expect(result.current.value).toEqual({ age: 18, firstname: `hello`, lastname: `world` })
   expect(JSON.stringify(result.current.value)).toBe(JSON.stringify({ age: 18, firstname: `hello`, lastname: `world` }))
 });

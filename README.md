@@ -31,11 +31,6 @@ yarn add use-primitives
 npm i use-primitives
 ```
 
-**⚠️ Important ⚠️** 
-
-useValidateShape uses `Proxy`. If you want to support older browsers (hope you won't), you will have to add a polyfill
-for it
-
 # 📖 Docs
 
 You can full detailed read docs [here](./docs/README.md).
