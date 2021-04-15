@@ -119,7 +119,19 @@ export const useValidateShape = <T extends { [index: string]: UseValidateHook<an
     return {
       valid: validation.value,
       value: new Proxy(validator, {
-        get: (target, property) => target[property].value,
+        get: (target, property) => {
+          if (property === `toJSON`) {
+            let tojson: any = {};
+
+            for (let i = 0; i < keys.length; i++) {
+              tojson[keys[i]] = target[keys[i]].value;
+            }
+
+            return JSON.stringify(tojson);
+          }
+
+          return target[property].value;
+        },
       }),
       shape: validator,
     }
