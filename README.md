@@ -25,10 +25,10 @@ A collection of React hooks for primitives handling and data validation.
 
 ```bash
 # yarn
-yarn add use-tiinvo
+yarn add use-tiinvo tiinvo
 
 # npm
-npm i use-tiinvo
+npm i use-tiinvo tiinvo
 ```
 
 # 📖 Docs
@@ -76,7 +76,8 @@ export const MyComponent: FC<MyComponentProps> = ({
 
 ```tsx
 import React, { FC, useEffect } from 'react';
-import { fallback, pipe, useStr } from 'use-tiinvo';
+import { useStr } from 'use-tiinvo';
+import { fallback, pipe } from 'tiinvo';
 
 
 export interface MyTextfieldProps {
@@ -105,7 +106,8 @@ export const MyTextfield: FC<MyTextfieldProps> = ({
 
 ```tsx
 import * as React from 'react';
-import { useValidateShape, usePredicate, useValidate, isnumber, isstring, pipe, predicate, num, str } from 'use-tiinvo';
+import { useValidateShape, usePredicate, useValidate } from 'use-tiinvo';
+import { isnumber, isstring, pipe, predicate, num, str } from 'tiinvo';
 
 const requiredstr = pipe(
    str.trim,
