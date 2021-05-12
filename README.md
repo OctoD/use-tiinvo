@@ -25,10 +25,10 @@ A collection of React hooks for primitives handling and data validation.
 
 ```bash
 # yarn
-yarn add use-primitives
+yarn add use-tiinvo
 
 # npm
-npm i use-primitives
+npm i use-tiinvo
 ```
 
 # 📖 Docs
@@ -43,7 +43,7 @@ A button which shows/hide a modal
 
 ```tsx
 import React, { FC } from 'react';
-import { useBool } from 'use-primitives'
+import { useBool } from 'use-tiinvo'
 
 export interface MyComponentProps {
   
@@ -76,7 +76,7 @@ export const MyComponent: FC<MyComponentProps> = ({
 
 ```tsx
 import React, { FC, useEffect } from 'react';
-import { fallback, pipe, useStr } from 'use-primitives';
+import { fallback, pipe, useStr } from 'use-tiinvo';
 
 
 export interface MyTextfieldProps {
@@ -105,7 +105,7 @@ export const MyTextfield: FC<MyTextfieldProps> = ({
 
 ```tsx
 import * as React from 'react';
-import { useValidateShape, usePredicate, useValidate, isnumber, isstring, pipe, predicate, num, str } from 'use-primitives';
+import { useValidateShape, usePredicate, useValidate, isnumber, isstring, pipe, predicate, num, str } from 'use-tiinvo';
 
 const requiredstr = pipe(
    str.trim,
