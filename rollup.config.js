@@ -1,6 +1,4 @@
 import typescript from 'rollup-plugin-typescript2';
-import {terser} from 'rollup-plugin-terser';
-import { name } from './package.json';
 
 export default [
   // ES module build (replaces broken basic TypeScript compilation)
@@ -18,17 +16,5 @@ export default [
     input: ['src/index.ts'],
     output: [{ dir: 'dist/cjs', format: 'cjs', entryFileNames: '[name].js' }],
     plugins: [typescript({ tsconfig: './tsconfig.npm.json' })],
-  },
-  {
-    preserveModules: false,
-    input: ['src/index.ts'],
-    output: [{ dir: 'dist/umd', format: 'umd', entryFileNames: '[name].js', name }],
-    plugins: [typescript({ tsconfig: './tsconfig.npm.json' }), terser()],
-  },
-  {
-    preserveModules: false,
-    input: ['src/index.ts'],
-    output: [{ dir: 'dist/amd', format: 'amd', entryFileNames: '[name].js', name }],
-    plugins: [typescript({ tsconfig: './tsconfig.npm.json' }), terser()],
   },
 ]
