@@ -1,5 +1,3 @@
-export * from 'tiinvo';
-
 export * from './use-array';
 export * from './use-bool';
 export * from './use-num';
